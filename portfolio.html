@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Fakiah - Data Support Assistant</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    
+    <style>
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: 2px solid var(--color-primary-soft);
+            color: var(--color-text-purple);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--border-radius-pill);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--color-primary-soft);
+            color: var(--color-bg-pure);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Fakiah <span>♡</span></a>
+            
+            <button class="hamburger" aria-label="Toggle Menu">
+                ☰
+            </button>
+            
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#services">Services</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="index.html#tools">Tools</a>
+                <a href="index.html#contact" class="btn btn-primary">Let's Work Together</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header style="padding-top: 150px; padding-bottom: 50px; text-align: center;">
+        <div class="container">
+            <img src="assets/images/cats/verification_cat.jpg" alt="Portfolio Cat" style="width: 100px; margin: 0 auto 1.5rem;" class="float-anim">
+            <h1>All Portfolio Projects</h1>
+            <p class="section-subtitle">A collection of my freelance data support work.</p>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid -->
+    <section class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="data-entry">Data Entry</button>
+                <button class="filter-btn" data-filter="data-cleaning">Data Cleaning</button>
+                <button class="filter-btn" data-filter="web-research">Web Research</button>
+            </div>
+            
+            <div class="portfolio-grid" style="grid-template-columns: repeat(3, 1fr);">
+                
+                <!-- Project 1 -->
+                <div class="card portfolio-card" data-category="data-entry">
+                    <div class="portfolio-image" style="background-color: var(--color-bg-main); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">📊</span>
+                    </div>
+                    <div class="portfolio-labels">
+                        <span class="label">Excel</span>
+                        <span class="label">Data Entry</span>
+                    </div>
+                    <h3>Product Data Entry</h3>
+                    <p style="font-size: 0.8rem; font-weight: bold; color: var(--color-primary-dark);">Sample Project</p>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card portfolio-card" data-category="data-cleaning">
+                    <div class="portfolio-image" style="background-color: var(--color-bg-main); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">📝</span>
+                    </div>
+                    <div class="portfolio-labels">
+                        <span class="label">Excel</span>
+                        <span class="label">Data Cleaning</span>
+                    </div>
+                    <h3>Contact List Cleaning</h3>
+                    <p style="font-size: 0.8rem; font-weight: bold; color: var(--color-primary-dark);">Sample Project</p>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="card portfolio-card" data-category="web-research">
+                    <div class="portfolio-image" style="background-color: var(--color-bg-main); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🔍</span>
+                    </div>
+                    <div class="portfolio-labels">
+                        <span class="label">Web Research</span>
+                        <span class="label">Google Sheets</span>
+                    </div>
+                    <h3>Business Web Research</h3>
+                    <p style="font-size: 0.8rem; font-weight: bold; color: var(--color-primary-dark);">Sample Project</p>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="card portfolio-card" data-category="web-research">
+                    <div class="portfolio-image" style="background-color: var(--color-bg-main); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🛒</span>
+                    </div>
+                    <div class="portfolio-labels">
+                        <span class="label">Web Research</span>
+                        <span class="label">Data Collection</span>
+                    </div>
+                    <h3>E-commerce Data Collection</h3>
+                    <p style="font-size: 0.8rem; font-weight: bold; color: var(--color-primary-dark);">Sample Project</p>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="card portfolio-card" data-category="data-entry">
+                    <div class="portfolio-image" style="background-color: var(--color-bg-main); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">📄</span>
+                    </div>
+                    <div class="portfolio-labels">
+                        <span class="label">PDF to Excel</span>
+                        <span class="label">Data Entry</span>
+                    </div>
+                    <h3>Invoice Data Extraction</h3>
+                    <p style="font-size: 0.8rem; font-weight: bold; color: var(--color-primary-dark);">Sample Project</p>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="card portfolio-card" data-category="data-cleaning">
+                    <div class="portfolio-image" style="background-color: var(--color-bg-main); height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">✨</span>
+                    </div>
+                    <div class="portfolio-labels">
+                        <span class="label">Google Sheets</span>
+                        <span class="label">Data Cleaning</span>
+                    </div>
+                    <h3>Formatting Standardization</h3>
+                    <p style="font-size: 0.8rem; font-weight: bold; color: var(--color-primary-dark);">Sample Project</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">Fakiah <span>♡</span></div>
+            <p class="footer-services">Data Entry • Data Cleaning • Web Research</p>
+            <div class="footer-links">
+                <a href="mailto:hello@fakiah.com">Email</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with care ♡ <span id="current-year"></span></p>
+            </div>
+        </div>
+        <img src="assets/images/cats/sleeping_cat.jpg" alt="Sleeping Cat" class="sleeping-cat">
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/portfolio.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
