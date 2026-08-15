@@ -1,0 +1,121 @@
+/* 
+  responsive.css - Media queries for FAKIAH Customer Inquiry Form
+*/
+
+/* Tablets and small desktops */
+@media (max-width: 900px) {
+  .app-container {
+    margin: 2rem auto 4rem;
+  }
+  
+  .form-step {
+    padding: 2rem;
+  }
+  
+  .step-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .app-container {
+    margin: 1.5rem auto 3rem;
+    padding: 0 0.5rem;
+  }
+  
+  .form-step {
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+  }
+  
+  /* Progress adjustments */
+  .progress-container {
+    display: none; /* Hide full progress bar */
+  }
+  
+  .mobile-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .mobile-progress-text {
+    font-weight: 700;
+    color: var(--color-text-purple);
+  }
+  
+  .mobile-progress-bar-container {
+    flex-grow: 1;
+    height: 6px;
+    background-color: var(--color-inactive);
+    border-radius: 3px;
+    margin-left: 1rem;
+    overflow: hidden;
+  }
+  
+  .mobile-progress-fill {
+    height: 100%;
+    background-color: var(--color-primary);
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+  
+  .step-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .step-header p {
+    font-size: 1rem;
+  }
+  
+  .step-cat {
+    width: 80px;
+  }
+  
+  .step-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  /* Reverse button order on mobile so Primary is on top */
+  .step-actions .btn-secondary {
+    order: 2;
+  }
+  .step-actions .btn-primary {
+    order: 1;
+  }
+  
+  .review-item {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .review-label {
+    width: 100%;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .review-value {
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+}

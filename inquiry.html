@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Inquiry | FAKIAH</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/inquiry-style.css">
+    <link rel="stylesheet" href="assets/css/inquiry-responsive.css">
+    <link rel="stylesheet" href="assets/css/inquiry-animations.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" id="portfolioLink" class="logo">FAKIAH <span>♡</span></a>
+            <a href="#" id="backToPortfolio" class="back-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <main class="app-container fade-in-up">
+        
+        <!-- Progress Indicator -->
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-line"></div>
+            <div class="progress-fill" id="progressFill"></div>
+            
+            <div class="progress-step active" data-step="1">1</div>
+            <div class="progress-step" data-step="2">2</div>
+            <div class="progress-step" data-step="3">3</div>
+            <div class="progress-step" data-step="4">4</div>
+            <div class="progress-step" data-step="5">5</div>
+        </div>
+        
+        <!-- Mobile Progress -->
+        <div class="mobile-progress" id="mobileProgress">
+            <span class="mobile-progress-text" id="mobileProgressText">Step 1 of 5</span>
+            <div class="mobile-progress-bar-container">
+                <div class="mobile-progress-fill" id="mobileProgressFill"></div>
+            </div>
+        </div>
+
+        <form id="inquiryForm" onsubmit="return false;">
+            
+            <!-- STEP 1: WELCOME & ABOUT YOU -->
+            <section class="form-step active" id="step1">
+                <div class="step-header">
+                    <img src="assets/images/cats/intro_cat.jpg" alt="Cat holding clipboard" class="step-cat float-anim">
+                    <h2>Let's Work Together ♡</h2>
+                    <p>Tell me a little about your project and I'll help turn your data task into a clear, organized process.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Your name" required minlength="2">
+                    <span class="error-message">Please enter your name ♡</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+                    <span class="error-message">Please enter a valid email address.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company / Organization</label>
+                    <input type="text" id="company" name="company" class="form-control" placeholder="Company name (optional)">
+                </div>
+                
+                <div class="form-group">
+                    <label>Preferred Contact Method *</label>
+                    <div class="options-grid">
+                        <label class="option-card" for="contactEmail">
+                            <input type="radio" name="preferredContact" id="contactEmail" value="Email" checked>
+                            <span class="option-title">Email</span>
+                        </label>
+                        <label class="option-card" for="contactWhatsApp">
+                            <input type="radio" name="preferredContact" id="contactWhatsApp" value="WhatsApp">
+                            <span class="option-title">WhatsApp</span>
+                        </label>
+                        <label class="option-card" for="contactOther">
+                            <input type="radio" name="preferredContact" id="contactOther" value="Other">
+                            <span class="option-title">Other</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="step-actions" style="justify-content: flex-end;">
+                    <button type="button" class="btn btn-primary next-btn">Continue 
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- STEP 2: SERVICE & PROJECT DETAILS -->
+            <section class="form-step" id="step2">
+                <div class="step-header">
+                    <img src="assets/images/cats/laptop_cat.jpg" alt="Cat typing on laptop" class="step-cat float-anim">
+                    <h2>What can I help you with? ♡</h2>
+                    <p>Choose the service that best matches your project.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Services Required * <span class="help-text">You can select more than one.</span></label>
+                    <div class="options-grid" id="serviceOptions">
+                        <label class="option-card" for="srvDataEntry">
+                            <input type="checkbox" name="service" id="srvDataEntry" value="Data Entry">
+                            <span class="option-title">Data Entry</span>
+                            <p class="option-desc">Enter and organize information accurately.</p>
+                        </label>
+                        <label class="option-card" for="srvDataCleaning">
+                            <input type="checkbox" name="service" id="srvDataCleaning" value="Data Cleaning">
+                            <span class="option-title">Data Cleaning</span>
+                            <p class="option-desc">Clean, standardize and organize messy data.</p>
+                        </label>
+                        <label class="option-card" for="srvWebResearch">
+                            <input type="checkbox" name="service" id="srvWebResearch" value="Web Research">
+                            <span class="option-title">Web Research</span>
+                            <p class="option-desc">Research information and organize useful findings.</p>
+                        </label>
+                        <label class="option-card" for="srvDataCollection">
+                            <input type="checkbox" name="service" id="srvDataCollection" value="Data Collection">
+                            <span class="option-title">Data Collection</span>
+                            <p class="option-desc">Collect information from websites or documents.</p>
+                        </label>
+                        <label class="option-card" for="srvDataVerification">
+                            <input type="checkbox" name="service" id="srvDataVerification" value="Data Verification">
+                            <span class="option-title">Data Verification</span>
+                            <p class="option-desc">Check information for accuracy and consistency.</p>
+                        </label>
+                        <label class="option-card" for="srvOther">
+                            <input type="checkbox" name="service" id="srvOther" value="Other">
+                            <span class="option-title">Other</span>
+                            <p class="option-desc">For tasks that don't fit the categories above.</p>
+                        </label>
+                    </div>
+                    <span class="error-message" id="serviceError">Please select at least one service.</span>
+                </div>
+                
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label for="projectTitle">Project Title *</label>
+                    <input type="text" id="projectTitle" name="projectTitle" class="form-control" placeholder="Example: Product data entry" required>
+                    <span class="error-message">Please provide a short title for the project.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectDescription">Project Description *</label>
+                    <textarea id="projectDescription" name="projectDescription" class="form-control" placeholder="Tell me what you would like me to do..." maxlength="1000" required></textarea>
+                    <div class="char-counter"><span id="descCount">0</span> / 1000</div>
+                    <span class="error-message">Tell me a little more about the task so I can understand what you need. (Min 20 characters)</span>
+                </div>
+                
+                <div class="step-actions">
+                    <button type="button" class="btn btn-secondary prev-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        Back
+                    </button>
+                    <button type="button" class="btn btn-primary next-btn">Continue 
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- STEP 3: FILES & DETAILS -->
+            <section class="form-step" id="step3">
+                <div class="step-header">
+                    <img src="assets/images/cats/files_cat.jpg" alt="Cat organizing files" class="step-cat float-anim">
+                    <h2>What will I be working with? ♡</h2>
+                    <p>A little more detail helps me understand the format and scope.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Current File / Data Format</label>
+                    <div class="options-grid">
+                        <label class="option-card" for="fmtExcel">
+                            <input type="checkbox" name="fileFormat" id="fmtExcel" value="Excel">
+                            <span class="option-title">Excel</span>
+                        </label>
+                        <label class="option-card" for="fmtSheets">
+                            <input type="checkbox" name="fileFormat" id="fmtSheets" value="Google Sheets">
+                            <span class="option-title">Google Sheets</span>
+                        </label>
+                        <label class="option-card" for="fmtPDF">
+                            <input type="checkbox" name="fileFormat" id="fmtPDF" value="PDF">
+                            <span class="option-title">PDF</span>
+                        </label>
+                        <label class="option-card" for="fmtImages">
+                            <input type="checkbox" name="fileFormat" id="fmtImages" value="Images">
+                            <span class="option-title">Images</span>
+                        </label>
+                        <label class="option-card" for="fmtWebsite">
+                            <input type="checkbox" name="fileFormat" id="fmtWebsite" value="Website">
+                            <span class="option-title">Website</span>
+                        </label>
+                        <label class="option-card" for="fmtOtherFormat">
+                            <input type="checkbox" name="fileFormat" id="fmtOtherFormat" value="Other">
+                            <span class="option-title">Other</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label>Approximate Amount of Data</label>
+                    <div class="options-grid">
+                        <label class="option-card" for="sizeSmall">
+                            <input type="radio" name="dataSize" id="sizeSmall" value="Small (< 100 records)">
+                            <span class="option-title">Small</span>
+                            <p class="option-desc">Less than 100 records</p>
+                        </label>
+                        <label class="option-card" for="sizeMedium">
+                            <input type="radio" name="dataSize" id="sizeMedium" value="Medium (100–1000 records)">
+                            <span class="option-title">Medium</span>
+                            <p class="option-desc">100–1,000 records</p>
+                        </label>
+                        <label class="option-card" for="sizeLarge">
+                            <input type="radio" name="dataSize" id="sizeLarge" value="Large (1000+ records)">
+                            <span class="option-title">Large</span>
+                            <p class="option-desc">1,000+ records</p>
+                        </label>
+                        <label class="option-card" for="sizeNotSure">
+                            <input type="radio" name="dataSize" id="sizeNotSure" value="Not sure yet">
+                            <span class="option-title">Not Sure</span>
+                            <p class="option-desc">I'm not sure yet</p>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label>Upload a file or reference (Optional)</label>
+                    <span class="help-text">You can upload a sample file, spreadsheet, PDF, or screenshot. Max size: 10MB.</span>
+                    <label class="file-upload-area" for="fileUpload">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        <p style="color: var(--color-text-purple); font-weight: 600;">Click to browse files</p>
+                        <input type="file" id="fileUpload" name="fileUpload">
+                        <div class="file-name-display" id="fileNameDisplay"></div>
+                        <span class="error-message" id="fileError">File must be less than 10MB.</span>
+                    </label>
+                </div>
+                
+                <div class="step-actions">
+                    <button type="button" class="btn btn-secondary prev-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        Back
+                    </button>
+                    <button type="button" class="btn btn-primary next-btn">Continue 
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- STEP 4: TIMELINE & BUDGET -->
+            <section class="form-step" id="step4">
+                <div class="step-header">
+                    <img src="assets/images/cats/search_cat.jpg" alt="Cat holding magnifying glass" class="step-cat float-anim">
+                    <h2 style="font-size: 1.8rem;">Timeline & Additional Needs ♡</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label for="deadline">Preferred Completion Date (Optional)</label>
+                    <input type="date" id="deadline" name="deadline" class="form-control">
+                </div>
+                
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label>Urgency</label>
+                    <div class="options-grid">
+                        <label class="option-card" for="urgFlexible">
+                            <input type="radio" name="urgency" id="urgFlexible" value="Flexible">
+                            <span class="option-title">Flexible</span>
+                        </label>
+                        <label class="option-card" for="urgNormal">
+                            <input type="radio" name="urgency" id="urgNormal" value="Normal" checked>
+                            <span class="option-title">Normal</span>
+                        </label>
+                        <label class="option-card" for="urgUrgent">
+                            <input type="radio" name="urgency" id="urgUrgent" value="Urgent">
+                            <span class="option-title">Urgent</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label for="budget">Project Budget (Optional)</label>
+                    <select id="budget" name="budget" class="form-control" style="appearance: none;">
+                        <option value="" disabled selected>Select a budget range...</option>
+                        <option value="Below RM50">Below RM50</option>
+                        <option value="RM50–RM100">RM50 – RM100</option>
+                        <option value="RM100–RM250">RM100 – RM250</option>
+                        <option value="RM250–RM500">RM250 – RM500</option>
+                        <option value="RM500+">RM500+</option>
+                        <option value="Not sure yet">Not sure yet</option>
+                        <option value="Prefer to discuss">Prefer to discuss</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label for="additionalRequirements">Anything else I should know? ♡</label>
+                    <span class="help-text">Share any special instructions, formatting requirements, examples or additional notes.</span>
+                    <textarea id="additionalRequirements" name="additionalRequirements" class="form-control" placeholder="Optional notes..."></textarea>
+                </div>
+                
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label for="source">How did you find me? (Optional)</label>
+                    <select id="source" name="source" class="form-control">
+                        <option value="">Select...</option>
+                        <option value="Portfolio Website">Portfolio Website</option>
+                        <option value="Fiverr">Fiverr</option>
+                        <option value="LinkedIn">LinkedIn</option>
+                        <option value="JobStreet">JobStreet</option>
+                        <option value="Google Search">Google Search</option>
+                        <option value="Referral">Referral</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn btn-secondary prev-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        Back
+                    </button>
+                    <button type="button" class="btn btn-primary next-btn">Continue 
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- STEP 5: REVIEW & SUBMIT -->
+            <section class="form-step" id="step5">
+                <div class="step-header">
+                    <img src="assets/images/cats/review_cat.jpg" alt="Cat reviewing spreadsheet" class="step-cat float-anim">
+                    <h2>Let's check everything ♡</h2>
+                    <p>Review your information before sending your inquiry.</p>
+                </div>
+                
+                <div class="review-block">
+                    <div class="review-header">
+                        <h4>Customer Information</h4>
+                        <button type="button" class="edit-btn" onclick="goToStep(1)">← Edit</button>
+                    </div>
+                    <div class="review-item"><span class="review-label">Name:</span><span class="review-value" id="revName">-</span></div>
+                    <div class="review-item"><span class="review-label">Email:</span><span class="review-value" id="revEmail">-</span></div>
+                    <div class="review-item"><span class="review-label">Company:</span><span class="review-value" id="revCompany">-</span></div>
+                    <div class="review-item"><span class="review-label">Contact via:</span><span class="review-value" id="revContact">-</span></div>
+                </div>
+                
+                <div class="review-block">
+                    <div class="review-header">
+                        <h4>Project Details</h4>
+                        <button type="button" class="edit-btn" onclick="goToStep(2)">← Edit</button>
+                    </div>
+                    <div class="review-item"><span class="review-label">Service(s):</span><span class="review-value" id="revServices">-</span></div>
+                    <div class="review-item"><span class="review-label">Title:</span><span class="review-value" id="revTitle">-</span></div>
+                    <div class="review-item"><span class="review-label">Description:</span><span class="review-value" id="revDesc">-</span></div>
+                </div>
+                
+                <div class="review-block">
+                    <div class="review-header">
+                        <h4>Files & Timeline</h4>
+                        <button type="button" class="edit-btn" onclick="goToStep(3)">← Edit</button>
+                    </div>
+                    <div class="review-item"><span class="review-label">Format:</span><span class="review-value" id="revFormat">-</span></div>
+                    <div class="review-item"><span class="review-label">Data Size:</span><span class="review-value" id="revSize">-</span></div>
+                    <div class="review-item"><span class="review-label">File Attached:</span><span class="review-value" id="revFile">-</span></div>
+                    <div class="review-item"><span class="review-label">Deadline:</span><span class="review-value" id="revDeadline">-</span></div>
+                    <div class="review-item"><span class="review-label">Urgency:</span><span class="review-value" id="revUrgency">-</span></div>
+                    <div class="review-item"><span class="review-label">Budget:</span><span class="review-value" id="revBudget">-</span></div>
+                </div>
+
+                <div class="form-group" style="margin-top: 2rem;">
+                    <label class="option-card" for="consent" style="flex-direction: row; align-items: flex-start; gap: 1rem;">
+                        <input type="checkbox" name="consent" id="consent" required style="position: relative; opacity: 1; margin-top: 4px; accent-color: var(--color-primary-dark);">
+                        <div>
+                            <span class="option-title" style="margin-bottom: 0.5rem; display: inline;">I confirm that the information provided is accurate and can be used to contact me regarding this project inquiry. *</span>
+                            <p class="option-desc" style="font-size: 0.8rem;">Your information will only be used to review and respond to your inquiry.</p>
+                        </div>
+                    </label>
+                    <span class="error-message" id="consentError">Please confirm to proceed.</span>
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn btn-secondary prev-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        Back
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        Send My Inquiry ♡
+                    </button>
+                </div>
+            </section>
+        </form>
+
+        <!-- SUCCESS SCREEN -->
+        <section class="form-step" id="successStep">
+            <div class="success-card">
+                <img src="assets/images/cats/celebrate_cat.jpg" alt="Cat celebrating" class="step-cat float-anim">
+                <h2 style="color: var(--color-text-purple); font-size: 2.2rem; margin-bottom: 1rem;">Yay! Your inquiry has been received ♡</h2>
+                <p style="font-size: 1.1rem; max-width: 500px; margin: 0 auto;">Thank you for reaching out! I'll review your project details and get back to you as soon as possible.</p>
+                
+                <div class="success-ref">
+                    Inquiry received ✓<br>
+                    <span style="font-family: monospace; font-size: 1.1rem; margin-top: 0.5rem; display: block;" id="inquiryIdDisplay">FAK-XXXXX-001</span>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center; margin-top: 2rem;">
+                    <a href="#" class="btn btn-primary" id="successBackToPortfolio">Back to Portfolio</a>
+                    <button type="button" class="btn btn-secondary" onclick="location.reload();">Submit Another Inquiry</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ERROR SCREEN -->
+        <section class="form-step" id="errorStep">
+            <div class="success-card">
+                <h2 style="color: #D32F2F; font-size: 2.2rem; margin-bottom: 1rem;">Oops! Something went wrong ♡</h2>
+                <p style="font-size: 1.1rem; max-width: 500px; margin: 0 auto;">I couldn't send your inquiry right now due to a network error. Please try again.</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center; margin-top: 3rem;">
+                    <button type="button" class="btn btn-primary" onclick="goToStep(5)">Try Again</button>
+                    <a href="#" class="btn btn-secondary" id="contactDirectly">Contact Me Directly</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LOADING OVERLAY -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <img src="assets/images/cats/laptop_cat.jpg" alt="Loading" class="loading-cat pulse-anim">
+        <h3 style="color: var(--color-text-purple); font-size: 1.5rem;">Sending your inquiry... ♡</h3>
+        <p style="color: var(--color-text-soft);">Please don't close this page.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <img src="assets/images/cats/sleep_cat.jpg" alt="Sleeping cat" style="width: 50px; opacity: 0.8; margin-bottom: 1rem;" class="float-anim">
+            <div class="footer-logo">FAKIAH ♡</div>
+            <p>Data Entry • Data Cleaning • Web Research • Data Collection</p>
+            <div class="footer-links">
+                <a href="#">Back to Portfolio</a>
+                <a href="#">Email</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem;">Made with care ♡</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/form.js"></script>
+</body>
+</html>
